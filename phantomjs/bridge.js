@@ -31,6 +31,10 @@
           data.slow = test.slow;
         }
 
+        if (ev === "end" && window.__coverage__) {
+            data.coverage = window.__coverage__;
+        }
+
         sendMessage('mocha.' + ev, data);
 
       });

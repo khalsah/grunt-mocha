@@ -71,6 +71,10 @@ module.exports = function(grunt) {
         test.parent = suites[suites.length - 1] || null;
 
         err = test.err;
+
+        if (test.coverage) {
+          global.__coverage__ = test.coverage;
+        }
       }
 
       if (evt === 'suite') {
